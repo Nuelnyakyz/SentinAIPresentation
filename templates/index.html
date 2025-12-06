@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SentinAI - Intelligent System Monitoring</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="logo">Sentin<span class="highlight">AI</span></div>
+        <div class="links">
+            <a href="#core">Core Modules</a>
+            <a href="#support">Support Modules</a>
+            <a href="#dashboard">Dashboard</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Intelligent System Monitoring</h1>
+            <p>Next-generation observability powered by AI. Detect anomalies, analyze behavior, and remediate issues in real-time.</p>
+            <img src="{{ url_for('static', filename='images/viewport.png') }}" alt="SentinAI Dashboard" class="hero-img">
+        </div>
+    </header>
+
+    <section id="core" class="section">
+        <h2 class="section-title">Core Modules</h2>
+        <div class="cards-grid">
+            <div class="card pulse">
+                <div class="icon">📊</div>
+                <h3>MetricsPulse</h3>
+                <p>Utilizes <strong>Prometheus</strong> for data collection and trains a <strong>RandomForest</strong> model for prediction. It raises an alert when current CPU/RAM usage exceeds predictions by over 50%.</p>
+            </div>
+            <div class="card pulse">
+                <div class="icon">📝</div>
+                <h3>LogsPulse</h3>
+                <p>Aggregates logs using <strong>Loki</strong> and trains a machine learning model to classify them live. It instantly categorizes system events to detect errors and security threats.</p>
+            </div>
+            <div class="card pulse">
+                <div class="icon">👤</div>
+                <h3>UserBehaviorPulse</h3>
+                <p>Connects via <strong>SSH</strong> and uses <strong>psutil</strong> to monitor remote user activity. It builds a whitelist of normal behavior to flag any suspicious or anomalous commands.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="support" class="section alt-bg">
+        <h2 class="section-title">Support Architecture</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <h3>Dashboard</h3>
+                <p>Built with <strong>Streamlit</strong>, this interactive interface aggregates real-time streams from all Pulse modules. It provides a unified view for monitoring system health and reviewing historical data.</p>
+            </div>
+            <div class="card">
+                <h3>Intelligence</h3>
+                <p>The cognitive engine of SentinAI. It leverages <strong>Large Language Models (LLMs)</strong> and <strong>XAI</strong> to interpret complex anomaly patterns, offering natural language explanations and precise remediation steps.</p>
+            </div>
+            <div class="card">
+                <h3>Notifications</h3>
+                <p>Integrates with the <strong>Telegram Bot API</strong> for instant alert delivery. It pushes high-severity alerts and AI-generated summaries to administrators' mobile devices in real-time.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="dashboard" class="section">
+        <h2 class="section-title">System In Action</h2>
+        
+        <div class="showcase">
+            <div class="showcase-text">
+                <h3>Real-time Metrics & Graphs</h3>
+                <p>Visualize system performance with dynamic line charts that predict future load. The system learns your infrastructure's heartbeat to distinguish between normal spikes and genuine anomalies.</p>
+                <ul>
+                    <li><strong>Predictive Modeling:</strong> Uses historic data to forecast expected CPU and RAM usage.</li>
+                    <li><strong>Threshold Validation:</strong> Immediately flags deviations exceeding 50% of the predicted baseline.</li>
+                    <li><strong>Live Updates:</strong> Charts refresh automatically, giving you a pulse on system health.</li>
+                </ul>
+            </div>
+            <div class="showcase-img">
+                <!-- Placeholder for Image 1 -->
+                <!--<div class="img-placeholder">Insert Screenshot: metrics_graph.png</div>-->
+                <img src="{{ url_for('static', filename='images/metrics.png') }}" alt="Metrics Graph" onerror="this.style.display='none'">
+            </div>
+        </div>
+
+        <div class="showcase reverse">
+            <div class="showcase-text">
+                <h3>Log Distribution Analytics</h3>
+                <p>Gain global visibility into your system's operational footprint. Interactive pie charts and distribution graphs provide immediate context on what's happening across your entire infrastructure.</p>
+                <ul>
+                    <li><strong>Severity Ratios:</strong> Quickly assess the proportion of High, Medium, and Low severity events.</li>
+                    <li><strong>Error Categorization:</strong> Automaticaly groups logs by source (e.g., Auth, Database) to identify hotspots.</li>
+                    <li><strong>Volume Tracking:</strong> Visualizes log density to help you spot sudden spikes that often precede failures.</li>
+                </ul>
+            </div>
+            <div class="showcase-img">
+                <!--<div class="img-placeholder">Insert Screenshot: logs_piechart.png</div>-->
+                <img src="{{ url_for('static', filename='images/logscharts.png') }}" alt="Logs Pie Charts" onerror="this.style.display='none'">
+            </div>
+        </div>
+
+        <div class="showcase">
+            <div class="showcase-text">
+                <h3>Live Logs Feed</h3>
+                <p>Monitor system events as they happen with sub-second latency. The feed offers dynamic filtering by severity, source, and category, ensuring you can isolate critical errors from the noise instantly. </p>
+                <p>Features include:</p>
+                <ul>
+                    <li>Real-time auto-refresh mechanism.</li>
+                    <li>Color-coded severity tags (Low, Medium, High).</li>
+                    <li>One-click filtering for rapid triage.</li>
+                </ul>
+            </div>
+            <div class="showcase-img">
+                <!--<div class="img-placeholder">Insert Screenshot: logs_list.png</div>-->
+                <img src="{{ url_for('static', filename='images/recent_logs_list.png') }}" alt="Logs List" onerror="this.style.display='none'">
+            </div>
+        </div>
+
+        <div class="showcase reverse">
+            <div class="showcase-text">
+                <h3>Behavior Analysis Table</h3>
+                <p>Track user actions against established baselines. This module provides a granular view of command execution to detect insider threats or compromised accounts.</p>
+                <ul>
+                    <li><strong>Process Monitoring:</strong> Logs every executed command and its associated user.</li>
+                    <li><strong>Anomaly Detection:</strong> Flags "unexpected" commands that deviate from a user's whitelist profile.</li>
+                    <li><strong>Severity Grading:</strong> Automatically assigns risk levels (Safe, Warning, High) to every action.</li>
+                </ul>
+            </div>
+            <div class="showcase-img">
+                <!-- Placeholder for Image 2 -->
+                <!--<div class="img-placeholder">Insert Screenshot: behavior_table.png</div>-->
+                <img src="{{ url_for('static', filename='images/behavior.png') }}" alt="Behavior Table" onerror="this.style.display='none'">
+            </div>
+        </div>
+
+        <div class="showcase">
+            <div class="showcase-text">
+                <h3>Granular Log Explanations</h3>
+                <p>Don't just read logs; understand them. Select any individual entry to trigger an on-demand AI analysis. The system breaks down:</p>
+                <ul>
+                    <li><strong>Root Cause:</strong> Why the event occurred based on process context.</li>
+                    <li><strong>Impact Analysis:</strong> Potential risks to stability or security.</li>
+                    <li><strong>Remediation:</strong> Concrete, actionable steps to resolve the issue.</li>
+                    <li><strong>Confidence Score:</strong> AI's certainty level in its assessment.</li>
+                </ul>
+            </div>
+            <div class="showcase-img">
+                <!--<div class="img-placeholder">Insert Screenshot: single_log_explanation.png</div>-->
+                <img src="{{ url_for('static', filename='images/individual_log_explanation.png') }}" alt="Log Explanation" onerror="this.style.display='none'">
+            </div>
+        </div>
+
+        <div class="showcase reverse">
+            <div class="showcase-text">
+                <h3>Overall System AI Explanation</h3>
+                <p>SentinAI continuously synthesizes data from all modules to provide a holistic health report. Instead of checking ten different charts, get a single "General Status" summary.</p>
+                <p>The AI Engine evaluates:</p>
+                <ul>
+                    <li><strong>Current Metrics vs. Predictions:</strong> flagging deviations in CPU or RAM usage.</li>
+                    <li><strong>Log Severity Counts:</strong> Aggregating high/medium alerts.</li>
+                    <li><strong>Behavioral Anomalies:</strong> summarizing unusual user activity.</li>
+                    <li><strong>Actionable Findings:</strong> providing a "Normal", "Warning", or "Crucial" status with clear reasoning.</li>
+                </ul>
+            </div>
+            <div class="showcase-img">
+                <!-- Placeholder for Image 3 -->
+                <!--<div class="img-placeholder">Insert Screenshot: ai_explanation.png</div>-->
+                <img src="{{ url_for('static', filename='images/llm_explanation.png') }}" alt="AI Explanation" onerror="this.style.display='none'">
+            </div>
+        </div>
+
+        <div class="showcase">
+            <div class="showcase-text">
+                <h3>Interactive AI Assistant</h3>
+                <p>Your expert system companion. Engage in a natural language dialogue with SentinAI to ask questions like "How is the server performing?" or "Explain the recent CPU spike."</p>
+                <p>Capabilities include:</p>
+                <ul>
+                    <li><strong>Instant Snapshots:</strong> Returns a real-time table of metrics and predictions.</li>
+                    <li><strong>Contextual Awareness:</strong> Remembers previous queries for follow-up questions.</li>
+                    <li><strong>Deep Dives:</strong> Can query effective log patterns and explain complex technical states in simple English.</li>
+                    <li><strong>24/7 Availability:</strong> Always ready to assist with troubleshooting and system audits.</li>
+                </ul>
+            </div>
+            <div class="showcase-img">
+                <!-- Placeholder for Image 3 -->
+                <!--<div class="img-placeholder">Insert Screenshot: ai_explanation.png</div>-->
+                <img src="{{ url_for('static', filename='images/followup-chat.png') }}" alt="AI Explanation" onerror="this.style.display='none'">
+            </div>
+        </div>
+
+        <div class="showcase reverse">
+            <div class="showcase-text">
+                <h3>Instant Notifications</h3>
+                <p>Stay informed anywhere. The system automatically pushes notifications to the <strong>SentinAI-bot</strong> on Telegram whenever a warning or high-severity alert is triggered.</p>
+                <ul>
+                    <li><strong>Immediate Delivery:</strong> Alerts reach your phone seconds after detection.</li>
+                    <li><strong>Rich Context:</strong> Notifications include the error summary, severity level, and specific host details.</li>
+                    <li><strong>Actionable insights:</strong> AI-generated summaries accompany alerts, letting you understand the "why" without logging in.</li>
+                </ul>
+            </div>
+            <div class="showcase-img">
+                <!-- Placeholder for Image 4 -->
+                <!--<div class="img-placeholder">Insert Screenshot: telegram_alert.png</div>-->
+                <img src="{{ url_for('static', filename='images/telegram.png') }}" alt="Telegram Alert" onerror="this.style.display='none'">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>SentinAI Project Presentation &copy; 2025</p>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
